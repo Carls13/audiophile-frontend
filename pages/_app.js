@@ -7,8 +7,9 @@ export default function App({ Component, pageProps }) {
   const loadingPage = useRouterLoading();
 
   return (
-    <Layout>
-      {loadingPage ? <Spinner/> : <Component {...pageProps} />}
-    </Layout>
+      <Layout>
+        {loadingPage ? <Spinner/> : <Component {...pageProps} />}
+      </Layout>
+
   );
 }

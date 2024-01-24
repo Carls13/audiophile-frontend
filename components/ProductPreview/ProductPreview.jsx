@@ -26,7 +26,7 @@ export const ProductPreview = ({ product, reverse }) => {
                 {isNew && <NewText>NEW PRODUCT</NewText>}
                 <ProductTitle>{name}</ProductTitle>
                 <ProductText>{description}</ProductText>
-                <ProductButton onClick={() => router.push(`/article/${slug}`)}>SEE PRODUCT</ProductButton>
+                <ProductButton onClick={() => router.push(`/product/${slug}`)}>SEE PRODUCT</ProductButton>
             </ProductColumn>
         </ProductContainer>
     );
