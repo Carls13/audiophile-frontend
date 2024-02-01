@@ -8,3 +8,5 @@ export const THEME_WHITE = '#FAFAFA';
 export const PINK = '#fbaf85';
 export const BLACK = '#000000';
 export const WHITE = '#FFFFFF';
+
+export const ERROR = '#CD2C2C';

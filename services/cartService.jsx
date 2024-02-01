@@ -5,7 +5,6 @@ export const getCart = () => {
 }
 
 const setCart = (newCart) => {
-    debugger;
     localStorage.setItem('cart', JSON.stringify(newCart));
     window.dispatchEvent(new Event("storage"));
 }

@@ -19,6 +19,7 @@ import {
 } from './Cart.styles';
 import { addItemToCart, clearCart, getCart, getCartAmount, getTotalPrice, removeItemFromCart } from "@audiophile/services/cartService";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const Cart = ({ hidden }) => {
     // Context way does not work due to Next.js bug
@@ -26,6 +27,8 @@ export const Cart = ({ hidden }) => {
     const [cart, setCart] = useState([]);
     const [cartAmount, setAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+
+    const router = useRouter();
 
     useEffect(() => {
         setCart(getCart());
@@ -78,7 +81,7 @@ export const Cart = ({ hidden }) => {
                     <TotalLabel>TOTAL</TotalLabel>
                     <TotalValue>${parseFloat(totalPrice)}</TotalValue>
                 </TotalContainer>
-                <ProductButton>CHECKOUT</ProductButton>
+                <ProductButton onClick={() => router.push('/checkout')}>CHECKOUT</ProductButton>
             </CartContainer>
         </DarkOverlay>
     );
