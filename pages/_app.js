@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
   const loadingPage = useRouterLoading();
 
   return (
-      <Layout>
+      <Layout title={pageProps.title} isHome={pageProps.isHome}>
         {loadingPage ? <Spinner/> : <Component {...pageProps} />}
       </Layout>
 

@@ -9,7 +9,8 @@ export async function getServerSideProps() {
     // Pass data to the page via props
     return {
         props: {
-            products
+            products,
+            title: "HEADPHONES"
         }
     };
 };

@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 50px ${DESKTOP_X_PADDING};
-    background-color: ${BLACK};
+    background-color: ${props => props.isHome ? 'transparent' : BLACK   };
 
     #burger {
         display: none;

@@ -5,7 +5,10 @@ import { useEffect } from "react";
 
 export const HomeView = () => {
   useEffect(() => {
-    getAllProducts();
+    getAllProducts()
+    .catch((e) => {
+      console.log(e);
+    })
   }, []);
 
     return (

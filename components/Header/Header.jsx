@@ -6,13 +6,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { Cart } from "../Cart/Cart";
 
-export const Header = () => {
+export const Header = ({ isHome }) => {
     const [openMenu, setIsOpen] = useState(false);
     const [openCart, setOpenCart] = useState(false);
 
     return (
         <>
-            <HeaderContainer>
+            <HeaderContainer isHome={isHome}>
                 <Link href={'/'}>
                     <Image src={'/shared/desktop/logo.svg'} width={143} height={35} alt="Logo" />
                 </Link>

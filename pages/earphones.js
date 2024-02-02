@@ -9,13 +9,14 @@ export async function getServerSideProps() {
     // Pass data to the page via props
     return {
         props: {
-            products
+            products,
+            title: "EARPHONES"
         }
     };
 };
 
 export default function Earphones({ products }) {
     return (
-        <EarphonesView products={products} />
+        <EarphonesView products={products}  />
     );
 };
