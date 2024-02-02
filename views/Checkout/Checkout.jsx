@@ -28,6 +28,7 @@ import {
 import { getCart, getCartAmount, getTotalPrice } from "@audiophile/services/cartService";
 import { useEffect, useState } from "react";
 import { THEME_GRAY } from "@audiophile/theme/colors.theme";
+import { useForm } from "react-hook-form";
 
 export const CheckoutView = () => {
     const [cart, setCart] = useState([]);
@@ -37,6 +38,14 @@ export const CheckoutView = () => {
     const grandTotal = parseFloat(totalPrice) + 50 + vat;
 
     const [selectedPayment, setSelectedPayment] = useState("e-money");
+
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+      } = useForm();
+
+    const onSubmit = (data) => console.log(data)
 
     useEffect(() => {
         setCart(getCart());
@@ -70,60 +79,60 @@ export const CheckoutView = () => {
                         <InputContainer>
                             <LabelContainer>
                                 <Label>Name</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                {errors.name && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("name", { required: true })}  />
                         </InputContainer>
                         <InputContainer>
                             <LabelContainer>
                                 <Label>Email Address</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                {errors.email && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("email", { required: true })} />
                         </InputContainer>
                     </DoubleColumnContainer>
                     <DoubleColumnContainer>
                         <InputContainer>
                             <LabelContainer>
                                 <Label>Phone Number</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                {errors.phoneNumber && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("phoneNumber", { required: true })}/>
                         </InputContainer>
                     </DoubleColumnContainer>
                     <SectionTitle>shipping info</SectionTitle>
                     <SingleColumnContainer>
                         <InputContainer>
                             <LabelContainer>
-                                <Label>Phone Number</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                <Label>Address</Label>
+                                {errors.address && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("address", { required: true })} />
                         </InputContainer>
                     </SingleColumnContainer>
                     <DoubleColumnContainer>
                         <InputContainer>
                             <LabelContainer>
-                                <Label>Name</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                <Label>ZIP-Code</Label>
+                                {errors.zip && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("zip", { required: true })} />
                         </InputContainer>
                         <InputContainer>
                             <LabelContainer>
-                                <Label>Email Address</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                <Label>City</Label>
+                                {errors.city && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("city", { required: true })} />
                         </InputContainer>
                     </DoubleColumnContainer>
                     <DoubleColumnContainer>
                         <InputContainer>
                             <LabelContainer>
-                                <Label>Phone Number</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
+                                <Label>Country</Label>
+                                {errors.country && <ErrorMessage>Empty</ErrorMessage>}
                             </LabelContainer>
-                            <Input />
+                            <Input  {...register("country", { required: true })} />
                         </InputContainer>
                     </DoubleColumnContainer>
                     <SectionTitle>payment details</SectionTitle>
@@ -144,22 +153,25 @@ export const CheckoutView = () => {
                             </OptionContainer>
                         </InputContainer>
                     </DoubleColumnContainer>
-                    <DoubleColumnContainer>
-                        <InputContainer>
-                            <LabelContainer>
-                                <Label>Name</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
-                            </LabelContainer>
-                            <Input />
-                        </InputContainer>
-                        <InputContainer>
-                            <LabelContainer>
-                                <Label>Email Address</Label>
-                                <ErrorMessage>Empty</ErrorMessage>
-                            </LabelContainer>
-                            <Input />
-                        </InputContainer>
-                    </DoubleColumnContainer>
+                   {
+                    selectedPayment === 'e-money' &&
+                        <DoubleColumnContainer>
+                            <InputContainer>
+                                <LabelContainer>
+                                    <Label>e-Money Number</Label>
+                                    {errors.eMoneyNumber && <ErrorMessage>Empty</ErrorMessage>}
+                                </LabelContainer>
+                                <Input  {...register("eMoneyNumber", { required: selectedPayment === 'e-money' })} />
+                            </InputContainer>
+                            <InputContainer>
+                                <LabelContainer>
+                                    <Label>e-Money PIN</Label>
+                                    {errors.eMoneyPIN && <ErrorMessage>Empty</ErrorMessage>}
+                                </LabelContainer>
+                                <Input  {...register("eMoneyPIN", { required: selectedPayment === 'e-money' })} />
+                            </InputContainer>
+                        </DoubleColumnContainer>
+                    }
                     <CashOnDeliveryContainer>
                         <Image width={48} height={48} alt="Cash on Delivery" src='/checkout/icon-cash-on-delivery.svg' />
                         <CashOnDeliveryText>
@@ -202,7 +214,7 @@ export const CheckoutView = () => {
                         <TotalLabel>GRAND TOTAL</TotalLabel>
                         <TotalValue>${parseFloat(grandTotal)}</TotalValue>
                     </TotalContainer>
-                    <ProductButton>CONTINUE & PAY</ProductButton>
+                    <ProductButton onClick={handleSubmit(onSubmit)}>CONTINUE & PAY</ProductButton>
                 </SummaryContainer>
             </CheckoutPageContainer>
         </>
