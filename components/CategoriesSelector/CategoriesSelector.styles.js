@@ -1,5 +1,5 @@
 import { BLACK, THEME_GRAY } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const CategoriesContainer = styled.div`
@@ -7,6 +7,10 @@ export const CategoriesContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 80px ${TABLET_X_PADDING};
+    }
 `;
 
 export const CategoryCard = styled.div`

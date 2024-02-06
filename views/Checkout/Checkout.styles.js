@@ -1,5 +1,5 @@
 import { BLACK, ERROR, ORANGE, THEME_GRAY, WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const CheckoutPageContainer = styled.div`
@@ -7,6 +7,11 @@ export const CheckoutPageContainer = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 30px ${TABLET_X_PADDING};
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const CheckoutContainer = styled.div`
@@ -53,6 +58,10 @@ export const SummaryContainer = styled.div`
 
     button {
         width: 100%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        height: auto;
     }
 `;
 

@@ -1,5 +1,5 @@
 import { BLACK, GRAY, ORANGE, THEME_GRAY, WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const MainProductContainer = styled.div`
@@ -15,6 +15,10 @@ export const MainProductContainer = styled.div`
     img {
         display: block;
         margin-top: auto;
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${TABLET_X_PADDING};
     }
 `;
 
@@ -61,6 +65,10 @@ export const HomeSpeakerContainer = styled.div`
     background-size: cover;
     gap: 20px;
     height: 320px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${TABLET_X_PADDING};
+    }
 `;
 
 export const ProductTitleSecondary = styled.h3`
@@ -106,6 +114,10 @@ export const HomeProductDouble = styled.div`
 
     img {
         border-radius: 8px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${TABLET_X_PADDING};
     }
 `;
 

@@ -13,6 +13,11 @@ export const HomeHeroContainer = styled.div`
         position: relative;
         left: ${DESKTOP_X_PADDING};
     }
+
+    @media screen and (max-width: 1200px) {
+        background-image: url('/home/tablet/image-header.jpg');
+        background-position: -200px;
+    }
 `;
 
 export const HeroColumn = styled.div`
@@ -22,6 +27,13 @@ export const HeroColumn = styled.div`
     margin-top: 50px;
     gap: 20px;
     width: 25%;
+
+    @media screen and (max-width: 1200px) {
+        width: 50%;
+        align-items: center;
+        margin-left: 25%;
+        text-align: center;
+    }
 `;
 
 export const HeroNew = styled.span`

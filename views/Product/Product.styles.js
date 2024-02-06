@@ -1,5 +1,5 @@
 import { BLACK, ORANGE, THEME_GRAY } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const ProductPrice = styled.span`
@@ -50,6 +50,11 @@ export const ProductInfoContainer = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 40px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${TABLET_X_PADDING};
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const FeaturesColumn = styled.div`
@@ -84,6 +89,11 @@ export const InTheBoxColumn = styled.div`
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @media screen and (max-width: 1200px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 `;
 
 export const FeaturesContainer = styled.div`
@@ -124,6 +134,10 @@ export const OthersContainer = styled.div`
     align-items: center;
     gap: 64px;
     margin: 50px ${DESKTOP_X_PADDING};
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${TABLET_X_PADDING};
+    }
 `;
 
 export const OthersRow = styled.div`
@@ -163,6 +177,10 @@ export const GalleryGrid = styled.div`
 
     img {
         width: 100%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin: 20px ${TABLET_X_PADDING};
     }
 `;
 
