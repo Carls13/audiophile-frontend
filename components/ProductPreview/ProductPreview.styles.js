@@ -1,5 +1,5 @@
 import { BLACK, ORANGE, PINK, WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
@@ -7,12 +7,27 @@ export const ProductContainer = styled.div`
     flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
     gap: 50px;
     margin: 50px ${DESKTOP_X_PADDING};
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${TABLET_X_PADDING};
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 `;
 
 export const ProductColumn = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media screen and (max-width: 1200px) {
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 export const NewText = styled.span`
@@ -48,6 +63,10 @@ export const ProductText = styled.p`
     font-weight: 500;
     line-height: 25px;
     margin: 30px 0;
+
+    @media screen and (max-width: 1200px) {
+        width: 70%;
+    }
 `;
 
 export const ProductButton = styled.button`
