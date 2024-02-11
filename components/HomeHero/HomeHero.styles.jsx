@@ -1,5 +1,5 @@
 import { WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const HomeHeroContainer = styled.div`
@@ -17,6 +17,12 @@ export const HomeHeroContainer = styled.div`
     @media screen and (max-width: 1200px) {
         background-image: url('/home/tablet/image-header.jpg');
         background-position: -200px;
+
+        hr {
+            padding-left: ${TABLET_X_PADDING};
+            position: relative;
+            left: ${TABLET_X_PADDING};
+        }
     }
 `;
 
@@ -33,6 +39,7 @@ export const HeroColumn = styled.div`
         align-items: center;
         margin-left: 25%;
         text-align: center;
+        margin-top: 35%;
     }
 `;
 

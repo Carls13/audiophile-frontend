@@ -13,6 +13,7 @@ export const Header = ({ isHome }) => {
     return (
         <>
             <HeaderContainer isHome={isHome}>
+                <Image onClick={() => setIsOpen(!openMenu)} id="burger" src='/shared/tablet/icon-hamburger.svg' width={23} height={20} alt="Menu icon" />
                 <Link href={'/'}>
                     <Image src={'/shared/desktop/logo.svg'} width={143} height={35} alt="Logo" />
                 </Link>

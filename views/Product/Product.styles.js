@@ -1,5 +1,5 @@
 import { BLACK, ORANGE, THEME_GRAY } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const ProductPrice = styled.span`
@@ -144,6 +144,11 @@ export const OthersRow = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${MOBILE_X_PADDING};
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const OtherContainer = styled.div`

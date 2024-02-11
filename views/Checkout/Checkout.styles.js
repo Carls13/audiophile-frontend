@@ -1,5 +1,5 @@
 import { BLACK, ERROR, ORANGE, THEME_GRAY, WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const CheckoutPageContainer = styled.div`
@@ -12,6 +12,10 @@ export const CheckoutPageContainer = styled.div`
         margin: 30px ${TABLET_X_PADDING};
         grid-template-columns: 1fr;
     }
+    
+    @media screen and (max-width: 600px) {
+        margin: 30px ${MOBILE_X_PADDING};
+    }
 `;
 
 export const CheckoutContainer = styled.div`
@@ -21,6 +25,10 @@ export const CheckoutContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 31px;
+
+    @media screen and (max-width: 600px) {
+        padding: 20px;
+    }
 `;
 
 export const CheckoutTitle = styled.h2`
@@ -93,6 +101,10 @@ export const DoubleColumnContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const SingleColumnContainer = styled.div`

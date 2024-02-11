@@ -1,5 +1,5 @@
 import { BLACK, GRAY, ORANGE, THEME_GRAY, WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const MainProductContainer = styled.div`
@@ -19,6 +19,20 @@ export const MainProductContainer = styled.div`
 
     @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+
+        img {
+            margin: auto;
+            width: 197px;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 25px ${MOBILE_X_PADDING};
+        width: 100%;
     }
 `;
 
@@ -28,6 +42,15 @@ export const MainProductColumn = styled.div`
     justify-content: center;
     gap: 20px;
     padding-right: 80px;
+
+    @media screen and (max-width: 1200px) {
+        padding: 0;
+        align-items: center;
+        width: 50%;
+        margin-left: 25%;
+        text-align: center;
+        padding-bottom: 50px;
+    }
 `;
 
 export const MainButton = styled.button`
@@ -118,6 +141,14 @@ export const HomeProductDouble = styled.div`
 
     @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 25px ${MOBILE_X_PADDING};
     }
 `;
 

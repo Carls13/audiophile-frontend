@@ -16,7 +16,6 @@ export const HomeHero = ({ children }) => {
     return (
         <HomeHeroContainer>
             {children}
-            <HR />
             <HeroColumn>
                 <HeroNew>NEW PRODUCT</HeroNew>
                 <HeroTitle>XX99 Mark II Headphones</HeroTitle>
