@@ -1,5 +1,5 @@
 import { ORANGE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const GoBackContainer = styled.div`
@@ -19,5 +19,9 @@ export const GoBackContainer = styled.div`
 
     @media screen and (max-width: 1200px) {
         margin: 38px ${TABLET_X_PADDING};
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin: 38px ${MOBILE_X_PADDING};
     }
 `;

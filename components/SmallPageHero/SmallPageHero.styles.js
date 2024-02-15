@@ -29,4 +29,11 @@ export const Title = styled.h1`
     letter-spacing: 2px;
     display: block;
     margin: auto;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 34px;
+    }
 `;

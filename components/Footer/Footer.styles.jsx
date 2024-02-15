@@ -75,6 +75,10 @@ export const FooterLeft = styled.div`
     flex-direction: column;
     gap: 20px;
     width: 50%;
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 export const FooterInfo = styled.span`

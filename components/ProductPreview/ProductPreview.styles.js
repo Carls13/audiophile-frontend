@@ -1,5 +1,5 @@
 import { BLACK, ORANGE, PINK, WHITE } from "@audiophile/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
@@ -16,6 +16,10 @@ export const ProductContainer = styled.div`
             width: 100%;
             height: auto;
         }
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 38px ${MOBILE_X_PADDING};
     }
 `;
 

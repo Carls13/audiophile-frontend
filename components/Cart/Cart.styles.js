@@ -1,4 +1,5 @@
 import { BLACK, ORANGE, THEME_BLACK, THEME_GRAY, WHITE } from "@audiophile/theme/colors.theme";
+import { MOBILE_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 
 export const DarkOverlay = styled.div`
@@ -10,6 +11,10 @@ export const DarkOverlay = styled.div`
     background: ${BLACK}88;
     z-index: 10;
     display: ${props => props.hidden ? 'none' : 'block'};
+
+    @media screen and (max-width: 600px) {
+        top: 90px;
+    }
 `;
 
 export const CartContainer = styled.div`
@@ -28,6 +33,15 @@ export const CartContainer = styled.div`
     button {
         display: block;
         margin: 0 auto;
+    }
+
+    @media screen and (max-width: 600px) {
+        left: ${0};
+        max-width: calc(100vw - ${MOBILE_X_PADDING});
+        width: calc(100vw - ${MOBILE_X_PADDING});
+            // width: 300px;
+        top: 50px;
+        padding: 20px 10px;
     }
 `;
 

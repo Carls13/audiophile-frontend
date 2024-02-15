@@ -18,6 +18,12 @@ export const AddToCartContainer = styled.div`
     align-items: center;
     gap: 16px;
     margin: 20px 0;
+
+    @media screen and (max-width: 600px) {
+        button {
+            width: 100px;
+        }
+    }
 `;
 
 export const AmountContainer = styled.div`
@@ -43,6 +49,10 @@ export const SignButton = styled.div`
     &:hover {
         filter: brightness(0.9);
     }
+
+    @media screen and (max-width: 600px) {
+        width: 15px;
+    }
 `;
 
 export const ProductInfoContainer = styled.div`
@@ -54,6 +64,10 @@ export const ProductInfoContainer = styled.div`
     @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
         grid-template-columns: 1fr;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 38px ${MOBILE_X_PADDING};
     }
 `;
 
@@ -93,6 +107,11 @@ export const InTheBoxColumn = styled.div`
     @media screen and (max-width: 1200px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
     }
 `;
 
@@ -137,6 +156,10 @@ export const OthersContainer = styled.div`
 
     @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 50px ${MOBILE_X_PADDING};
     }
 `;
 
@@ -186,7 +209,13 @@ export const GalleryGrid = styled.div`
 
     @media screen and (max-width: 1200px) {
         margin: 20px ${TABLET_X_PADDING};
+        grid-template-columns: 1fr;
     }
+
+    @media screen and (max-width: 600px) {
+        margin: 20px ${MOBILE_X_PADDING};
+        grid-template-columns: 1fr;
+    }   
 `;
 
 export const BackgroundDiv = styled.div`
@@ -201,6 +230,13 @@ export const BackgroundDiv = styled.div`
         grid-row: 1 /    span 2;
         height: 592px;
     }
+
+    @media screen and (max-width: 600px) {
+        &:nth-child(2) {
+            grid-column: unset;
+            grid-row: unset;
+        }
+    } 
 `;
 
 export const Amount = styled.div`
@@ -216,4 +252,8 @@ export const Amount = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 15px;
+
+    @media screen and (max-width: 600px) {
+        width: 20px;
+    }
 `;
