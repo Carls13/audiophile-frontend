@@ -1,8 +1,8 @@
-import { BLACK, LIGHT_PEACH, ORANGE, WHITE } from "@audiophile/theme/colors.theme";
+import { ORANGE, WHITE } from "@audiophile/theme/colors.theme";
 import styled, { css } from "styled-components";
 
 const activeStyle = css`
-    color: ${ORANGE};
+    color: ${ORANGE}!important;
 `;
 
 export const Option = styled.span`
@@ -17,18 +17,11 @@ export const Option = styled.span`
         
     a {
         color: ${WHITE};
+        ${props => props.active ? activeStyle : null}
         text-decoration: none;
         &:hover {
             ${activeStyle}
         }
-    }
-
-    &:nth-child(1) {
-        padding-left: 120px;
-    }
-    
-    &:nth-child(4) {
-        padding-right: 65px;
     }
 
     ${props => props.active ? activeStyle : null}
@@ -36,13 +29,5 @@ export const Option = styled.span`
     @media screen and (max-width: 600px) {
         background: none;
         backdrop-filter: none;
-
-        &:nth-child(1) {
-            padding-left: 0;
-        }
-       
-        &:nth-child(4) {
-            padding-right: 25px;
-        }
     }
 `;

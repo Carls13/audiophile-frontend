@@ -1,39 +1,26 @@
 import { BLACK, DARK_GREY, WHITE } from "@audiophile/theme/colors.theme";
 import styled from "styled-components";
-import css from "styled-jsx/css";
 import { DESKTOP_X_PADDING, TABLET_X_PADDING, MOBILE_X_PADDING } from "@audiophile/theme/spacing.theme";
 
 export const FooterContainer = styled.footer`
     background-color: ${BLACK};
-    padding: ${(props) => {
-        if (props.bigPadding) return`144px ${DESKTOP_X_PADDING} 72px ${DESKTOP_X_PADDING}`;
-        
-        return `72px ${DESKTOP_X_PADDING}`;
-    }};
+    padding: 72px ${DESKTOP_X_PADDING};
     display: flex;
     flex-direction: column;
     gap: 31px;
     position: relative;
-    margin-top: 200px;
+    margin-top: 50px;
 
     hr {
         width: 100%;
     }
 
     @media screen and (max-width: 1200px) {
-        padding: ${(props) => {
-            if (props.bigPadding) return `144px ${TABLET_X_PADDING} 72px ${TABLET_X_PADDING}`;
-            
-            return `72px ${TABLET_X_PADDING}`;
-        }};
+        padding: 72px ${TABLET_X_PADDING};
     }
     
     @media screen and (max-width: 600px) {
-        padding: ${(props) => {
-            if (props.bigPadding) return `144px ${MOBILE_X_PADDING} 72px ${MOBILE_X_PADDING}`;
-            
-            return `72px ${MOBILE_X_PADDING}`;
-        }};
+        padding: 72px ${MOBILE_X_PADDING};
     }
 `;
 

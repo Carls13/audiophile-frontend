@@ -1,4 +1,4 @@
-import { BLACK } from "@audiophile/theme/colors.theme";
+import { BLACK, THEME_WHITE } from "@audiophile/theme/colors.theme";
 import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@audiophile/theme/spacing.theme";
 import styled from "styled-components";
 import css from "styled-jsx/css";
@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
     padding: 50px ${DESKTOP_X_PADDING};
     background-color: ${props => props.isHome ? 'transparent' : BLACK   };
+    border-bottom: 1px solid ${THEME_WHITE};
 
     #burger {
         display: none;
@@ -68,7 +69,6 @@ export const HeaderOptions = styled.div`
 
         span {
             width: 100%;
-            color: #FFF;
             font-family: Manrope;
             font-size: 24px;
             font-style: normal;

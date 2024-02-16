@@ -14,6 +14,8 @@ export const CheckoutPageContainer = styled.div`
     }
     
     @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
         margin: 30px ${MOBILE_X_PADDING};
     }
 `;
@@ -70,6 +72,10 @@ export const SummaryContainer = styled.div`
 
     @media screen and (max-width: 1200px) {
         height: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 20px;
     }
 `;
 

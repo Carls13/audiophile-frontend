@@ -200,7 +200,7 @@ export const CheckoutView = () => {
                     }
                     <TotalContainer>
                         <TotalLabel>TOTAL</TotalLabel>
-                        <TotalValue>${parseFloat(totalPrice)}</TotalValue>
+                        <TotalValue>${parseFloat(totalPrice).toFixed(2)}</TotalValue>
                     </TotalContainer>
                     <TotalContainer>
                         <TotalLabel>SHIPPING</TotalLabel>
@@ -208,11 +208,11 @@ export const CheckoutView = () => {
                     </TotalContainer>
                     <TotalContainer>
                         <TotalLabel>VAT (INCLUDED)</TotalLabel>
-                        <TotalValue>${parseFloat(vat)}</TotalValue>
+                        <TotalValue>${parseFloat(vat).toFixed(2)}</TotalValue>
                     </TotalContainer>
                     <TotalContainer>
                         <TotalLabel>GRAND TOTAL</TotalLabel>
-                        <TotalValue>${parseFloat(grandTotal)}</TotalValue>
+                        <TotalValue>${parseFloat(grandTotal).toFixed(2)}</TotalValue>
                     </TotalContainer>
                     <ProductButton onClick={handleSubmit(onSubmit)}>CONTINUE & PAY</ProductButton>
                 </SummaryContainer>

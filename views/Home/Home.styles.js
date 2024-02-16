@@ -32,7 +32,9 @@ export const MainProductContainer = styled.div`
 
     @media screen and (max-width: 600px) {
         margin: 25px ${MOBILE_X_PADDING};
-        width: 100%;
+
+        img {
+        }
     }
 `;
 
@@ -90,7 +92,14 @@ export const HomeSpeakerContainer = styled.div`
     height: 320px;
 
     @media screen and (max-width: 1200px) {
+        background: url('/home/tablet/image-speaker-zx7.jpg');
         margin: 50px ${TABLET_X_PADDING};
+    }
+
+    @media screen and (max-width: 600px) {
+        background: url('/home/mobile/image-speaker-zx7.jpg');
+        background-size: contain;
+        margin: 25px ${MOBILE_X_PADDING};
     }
 `;
 
@@ -148,6 +157,7 @@ export const HomeProductDouble = styled.div`
     }
 
     @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
         margin: 25px ${MOBILE_X_PADDING};
     }
 `;
@@ -160,4 +170,8 @@ export const HomeEarphoneContainer = styled.div`
     background: ${THEME_GRAY};
     padding-left: 50px;
     border-radius: 8px;
+
+    @media screen and (max-width: 600px) {
+        padding: 30px 20px;
+    }
 `;
