@@ -21,7 +21,7 @@ import { addItemToCart, clearCart, getCart, getCartAmount, getTotalPrice, remove
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-export const Cart = ({ hidden }) => {
+export const Cart = ({ hidden, closeCart }) => {
     // Context way does not work due to Next.js bug
     // const { cart, addItemToCart, removeItemFromCart, cartAmount, totalPrice, clearCart } = useContext(CartContext);
     const [cart, setCart] = useState([]);
@@ -44,6 +44,11 @@ export const Cart = ({ hidden }) => {
         window.addEventListener("storage", listenStorageChange);
         return () => window.removeEventListener("storage", listenStorageChange);
       }, []);
+
+    const handleGoToCheckout = () => {
+        router.push('/checkout');
+        closeCart();
+    }
 
     return (
         <DarkOverlay hidden={hidden}>
@@ -81,7 +86,7 @@ export const Cart = ({ hidden }) => {
                     <TotalLabel>TOTAL</TotalLabel>
                     <TotalValue>${parseFloat(totalPrice)}</TotalValue>
                 </TotalContainer>
-                <ProductButton onClick={() => router.push('/checkout')}>CHECKOUT</ProductButton>
+                <ProductButton onClick={handleGoToCheckout}>CHECKOUT</ProductButton>
             </CartContainer>
         </DarkOverlay>
     );

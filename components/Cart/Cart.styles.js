@@ -39,7 +39,6 @@ export const CartContainer = styled.div`
         left: ${0};
         max-width: calc(100vw - ${MOBILE_X_PADDING});
         width: calc(100vw - ${MOBILE_X_PADDING});
-            // width: 300px;
         top: 50px;
         padding: 20px 10px;
     }

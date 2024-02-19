@@ -25,7 +25,7 @@ export const Header = ({ isHome }) => {
                 </HeaderOptions>
                 <Image onClick={() => setOpenCart(!openCart)} id="cart-icon" src='/shared/desktop/icon-cart.svg' width={23} height={20} alt="Cart icon" />
             </HeaderContainer>
-            <Cart hidden={!openCart} />
+            <Cart hidden={!openCart} closeCart={() => setOpenCart(false)} />
         </>
         
     );

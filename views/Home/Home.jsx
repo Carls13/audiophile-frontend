@@ -15,8 +15,11 @@ import {
   HomeEarphoneContainer
 } from './Home.styles';
 import { HeroText, HeroTitle } from "@audiophile/components/HomeHero/HomeHero.styles";
+import { useRouter } from "next/router";
 
 export const HomeView = () => {
+  const router = useRouter();
+
   useEffect(() => {
     getAllProducts()
     .catch((e) => {
@@ -32,19 +35,19 @@ export const HomeView = () => {
               <MainProductColumn>
                 <HeroTitle>ZX9 SPEAKER</HeroTitle>
                 <HeroText>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</HeroText>
-                <MainButton>SEE PRODUCT</MainButton>
+                <MainButton onClick={() => router.push('/product/zx9-speaker')}>SEE PRODUCT</MainButton>
               </MainProductColumn>
               
             </MainProductContainer>
             <HomeSpeakerContainer>
               <ProductTitleSecondary>ZX7 SPEAKER</ProductTitleSecondary>
-              <ProductButtonSecondary>SEE PRODUCT</ProductButtonSecondary>
+              <ProductButtonSecondary onClick={() => router.push('/product/zx7-speaker')}>SEE PRODUCT</ProductButtonSecondary>
             </HomeSpeakerContainer>
             <HomeProductDouble>
               <Image src='/home/desktop/image-earphones-yx1.jpg' width={540} height={320} alt="YX1 EARPHONES" />
               <HomeEarphoneContainer>
                 <ProductTitleSecondary>YX1 EARPHONES</ProductTitleSecondary>
-                <ProductButtonSecondary>SEE PRODUCT</ProductButtonSecondary>
+                <ProductButtonSecondary onClick={() => router.push('/product/yx1-earphones')}>SEE PRODUCT</ProductButtonSecondary>
               </HomeEarphoneContainer>
             </HomeProductDouble>
             <TheBest />

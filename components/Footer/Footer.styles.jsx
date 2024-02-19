@@ -103,4 +103,8 @@ export const SocialContainer = styled.div`
 export const SocialRow = styled.div`
     display: flex;
     gap: 10px;
+
+    img:hover {
+        filter: hue-rotate(0deg);
+    }
 `;

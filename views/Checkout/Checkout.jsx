@@ -25,14 +25,16 @@ import {
     CashOnDeliveryText,
     RadioButtonLabel
 } from './Checkout.styles';
-import { getCart, getCartAmount, getTotalPrice } from "@audiophile/services/cartService";
+import { getCart, getTotalPrice } from "@audiophile/services/cartService";
 import { useEffect, useState } from "react";
 import { THEME_GRAY } from "@audiophile/theme/colors.theme";
 import { useForm } from "react-hook-form";
+import { ConfirmationModal } from "@audiophile/components/ConfirmationModal/ConfirmationModal";
 
 export const CheckoutView = () => {
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [showConfirmationModal, setShowModal] = useState(false);
 
     const vat = 0.20 * parseFloat(totalPrice);
     const grandTotal = parseFloat(totalPrice) + 50 + vat;
@@ -45,7 +47,9 @@ export const CheckoutView = () => {
         handleSubmit,
       } = useForm();
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = () => {
+        setShowModal(true);
+    }
 
     useEffect(() => {
         setCart(getCart());
@@ -217,6 +221,7 @@ export const CheckoutView = () => {
                     <ProductButton onClick={handleSubmit(onSubmit)}>CONTINUE & PAY</ProductButton>
                 </SummaryContainer>
             </CheckoutPageContainer>
+            <ConfirmationModal hidden={!showConfirmationModal} />
         </>
     );
 };

@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { ProductButton } from "../ProductPreview/ProductPreview.styles";
-import { HR } from "../SmallPageHero/SmallPageHero.styles";
 
 import {
     HomeHeroContainer,
